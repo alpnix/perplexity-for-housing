@@ -1,0 +1,1421 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "GROTN APIS DOCUMENTATION",
+        "title": "GROTN APIS",
+        "termsOfService": "http://swagger.io/terms/",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "tags": [
+        {
+            "name": "USER OPERATIONS"
+        },
+        {
+            "name": "ROOMMATE OPERATIONS"
+        }
+    ],
+    "securityDefinitions": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "bearerFormat": "JWT",
+            "scheme": "bearer"
+        },
+        "CookieAuth": {
+            "type": "apiKey",
+            "name": "token",
+            "in": "cookie"
+        }
+    },
+    "security": [
+        {
+            "Bearer": []
+        },
+        {
+            "CookieAuth": []
+        }
+    ],
+    "paths": {
+        "/users/register": {
+            "post": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "User Registration",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "firstname": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "lastname": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "uid": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "password": {
+                                "type": "string"
+                            },
+                            "signupType": {
+                                "type": "string",
+                                "required": true,
+                                "enum": [
+                                    "GOOGLE",
+                                    "EMAIL"
+                                ],
+                                "example": "GOOGLE | EMAIL"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "token": {
+                                            "type": "string"
+                                        },
+                                        "role": {
+                                            "type": "string",
+                                            "enum": [
+                                                "LANDLORD",
+                                                "TENANT"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/users/login": {
+            "post": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "email": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "password": {
+                                "type": "string"
+                            },
+                            "uid": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "token": {
+                                            "type": "string"
+                                        },
+                                        "role": {
+                                            "type": "string",
+                                            "enum": [
+                                                "LANDLORD",
+                                                "TENANT"
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/users/profile": {
+            "get": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Get user profile",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "user": {
+                                            "type": "object",
+                                            "properties": {
+                                                "_id": {
+                                                    "type": "string"
+                                                },
+                                                "firstname": {
+                                                    "type": "string"
+                                                },
+                                                "lastname": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "defaultRole": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "LANDLORD",
+                                                        "TENANT"
+                                                    ]
+                                                },
+                                                "signupType": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "GOOGLE",
+                                                        "EMAIL"
+                                                    ]
+                                                },
+                                                "isNewUser": {
+                                                    "type": "boolean"
+                                                },
+                                                "image": {
+                                                    "type": "string"
+                                                },
+                                                "createdAt": {
+                                                    "type": "string"
+                                                },
+                                                "updatedAt": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "tenantProfile": {
+                                            "type": "object",
+                                            "properties": {
+                                                "city": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "description": {
+                                                            "type": "string"
+                                                        },
+                                                        "place_id": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                },
+                                                "dob": {
+                                                    "type": "string"
+                                                },
+                                                "gender": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "Male",
+                                                        "Female",
+                                                        "Other"
+                                                    ]
+                                                },
+                                                "openToRoommate": {
+                                                    "type": "boolean"
+                                                },
+                                                "interests": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "budget": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "min": {
+                                                            "type": "number"
+                                                        },
+                                                        "max": {
+                                                            "type": "number"
+                                                        }
+                                                    }
+                                                },
+                                                "drinks": {"type": "boolean"},
+                                                "smokes": {"type": "boolean"},
+                                                "profileImage": {"type": "string", "description": "Base64 data URL"},
+                                                "connections": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "user": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "firstname": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "lastname": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "email": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "image": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "status": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "recommended",
+                                                                    "pending",
+                                                                    "accepted",
+                                                                    "not-interested"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/users/profile/update": {
+            "put": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Update user profile",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "type": "object",
+                        "properties": {
+                            "defaultRole": {
+                                "type": "string",
+                                "enum": [
+                                    "LANDLORD",
+                                    "TENANT"
+                                ]
+                            },
+                            "city": {
+                                "type": "object",
+                                "properties": {
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "place_id": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "dob": {
+                                "type": "string",
+                                "pattern": "^(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}$",
+                                "example": "mm/dd/yyyy"
+                            },
+                            "gender": {
+                                "type": "string",
+                                "enum": [
+                                    "Male",
+                                    "Female",
+                                    "Other"
+                                ]
+                            },
+                            "openToRoommate": {
+                                "type": "boolean"
+                            },
+                            "drinks": {
+                                "type": "boolean"
+                            },
+                            "smokes": {
+                                "type": "boolean"
+                            },
+                            "budget": {
+                                "type": "object",
+                                "properties": {
+                                    "min": {
+                                        "type": "number"
+                                    },
+                                    "max": {
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "interests": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/users/upload-image": {
+            "post": {
+                "tags": [
+                    "USER OPERATIONS"
+                ],
+                "summary": "Upload user profile image",
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "image",
+                        "type": "file",
+                        "required": true,
+                        "description": "Profile image file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "image": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid data"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/roommates/recommended": {
+            "get": {
+                "tags": [
+                    "ROOMMATE OPERATIONS"
+                ],
+                "summary": "Get recommended roommates",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "user": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "firstname": {
+                                                        "type": "string"
+                                                    },
+                                                    "lastname": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "tenantProfile": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "city": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "description": {
+                                                                "type": "string"
+                                                            },
+                                                            "place_id": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "gender": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "Male",
+                                                            "Female",
+                                                            "Other"
+                                                        ]
+                                                    },
+                                                    "interests": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "budget": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "min": {
+                                                                "type": "number"
+                                                            },
+                                                            "max": {
+                                                                "type": "number"
+                                                            }
+                                                        }
+                                                    },
+                                                    "drinks": {"type": "boolean"},
+                                                    "smokes": {"type": "boolean"},
+                                                    "profileImage": {"type": "string", "description": "Base64 data URL"}
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/roommates/status": {
+            "put": {
+                "tags": [
+                    "ROOMMATE OPERATIONS"
+                ],
+                "summary": "Update roommate status",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "type": "object",
+                        "required": true,
+                        "properties": {
+                            "targetUserId": {
+                                "type": "string",
+                                "required": true
+                            },
+                            "newStatus": {
+                                "type": "string",
+                                "enum": [
+                                    "recommended",
+                                    "pending",
+                                    "accepted",
+                                    "not-interested"
+                                ],
+                                "required": true
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "object",
+                                    "properties": {
+                                        "city": {
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": "string"
+                                                },
+                                                "place_id": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "dob": {
+                                            "type": "string"
+                                        },
+                                        "gender": {
+                                            "type": "string",
+                                            "enum": [
+                                                "Male",
+                                                "Female",
+                                                "Other"
+                                            ]
+                                        },
+                                        "openToRoommate": {
+                                            "type": "boolean"
+                                        },
+                                        "interests": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "budget": {
+                                            "type": "object",
+                                            "properties": {
+                                                "min": {
+                                                    "type": "number"
+                                                },
+                                                "max": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        },
+                                        "drinks": {"type": "boolean"},
+                                        "smokes": {"type": "boolean"},
+                                        "profileImage": {"type": "string", "description": "Base64 data URL"},
+                                        "user": {
+                                            "type": "object",
+                                            "properties": {
+                                                "firstname": {
+                                                    "type": "string"
+                                                },
+                                                "lastname": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "image": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "connections": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "user": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "firstname": {
+                                                                "type": "string"
+                                                            },
+                                                            "lastname": {
+                                                                "type": "string"
+                                                            },
+                                                            "email": {
+                                                                "type": "string"
+                                                            },
+                                                            "image": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "status": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "recommended",
+                                                            "pending",
+                                                            "accepted",
+                                                            "not-interested"
+                                                        ]
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/roommates/status/{status}": {
+            "get": {
+                "tags": [
+                    "ROOMMATE OPERATIONS"
+                ],
+                "summary": "Get roommates by status",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "status",
+                        "type": "string",
+                        "required": true,
+                        "enum": [
+                            "recommended",
+                            "pending",
+                            "accepted",
+                            "not-interested"
+                        ],
+                        "description": "Roommate connection status"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "message": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "user": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "_id": {
+                                                        "type": "string"
+                                                    },
+                                                    "firstname": {
+                                                        "type": "string"
+                                                    },
+                                                    "lastname": {
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "type": "string"
+                                                    },
+                                                    "image": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "tenantProfile": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "city": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "description": {
+                                                                "type": "string"
+                                                            },
+                                                            "place_id": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "gender": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "Male",
+                                                            "Female",
+                                                            "Other"
+                                                        ]
+                                                    },
+                                                    "interests": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "budget": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "min": {
+                                                                "type": "number"
+                                                            },
+                                                            "max": {
+                                                                "type": "number"
+                                                            }
+                                                        }
+                                                    },
+                                                    "drinks": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "smokes": {
+                                                        "type": "boolean"
+                                                    }
+                                                }
+                                            },
+                                            "connectionStatus": {
+                                                "type": "string",
+                                                "enum": [
+                                                    "recommended",
+                                                    "pending",
+                                                    "accepted",
+                                                    "not-interested"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/properties": {
+            "get": {
+                "tags": [
+                    "PROPERTY OPERATIONS"
+                ],
+                "summary": "Get all properties",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "_id": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "propertyLocation": {
+                                        "type": "object",
+                                        "properties": {
+                                            "place_id": {
+                                                "type": "string"
+                                            },
+                                            "address": {
+                                                "type": "string"
+                                            },
+                                            "coordinates": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "lat": {
+                                                        "type": "number"
+                                                    },
+                                                    "lng": {
+                                                        "type": "number"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "price": {
+                                        "type": "number"
+                                    },
+                                    "bedrooms": {
+                                        "type": "integer"
+                                    },
+                                    "bathrooms": {
+                                        "type": "integer"
+                                    },
+                                    "sqft": {
+                                        "type": "number"
+                                    },
+                                    "type": {
+                                        "type": "string",
+                                        "enum": [
+                                            "apartment",
+                                            "house",
+                                            "condo",
+                                            "studio"
+                                        ]
+                                    },
+                                    "image": {
+                                        "type": "string"
+                                    },
+                                    "description": {
+                                        "type": "string"
+                                    },
+                                    "amenities": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "PROPERTY OPERATIONS"
+                ],
+                "summary": "Create a new property",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "propertyLocation": {
+                                    "type": "object",
+                                    "properties": {
+                                        "place_id": {
+                                            "type": "string"
+                                        },
+                                        "address": {
+                                            "type": "string"
+                                        },
+                                        "coordinates": {
+                                            "type": "object",
+                                            "properties": {
+                                                "lat": {
+                                                    "type": "number"
+                                                },
+                                                "lng": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "price": {
+                                    "type": "number"
+                                },
+                                "bedrooms": {
+                                    "type": "integer"
+                                },
+                                "bathrooms": {
+                                    "type": "integer"
+                                },
+                                "sqft": {
+                                    "type": "number"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "apartment",
+                                        "house",
+                                        "condo",
+                                        "studio"
+                                    ]
+                                },
+                                "image": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "amenities": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Property created successfully"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/properties/{id}": {
+            "get": {
+                "tags": [
+                    "PROPERTY OPERATIONS"
+                ],
+                "summary": "Get a property by ID",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string",
+                        "description": "Property ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "_id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "propertyLocation": {
+                                    "type": "object",
+                                    "properties": {
+                                        "place_id": {
+                                            "type": "string"
+                                        },
+                                        "address": {
+                                            "type": "string"
+                                        },
+                                        "coordinates": {
+                                            "type": "object",
+                                            "properties": {
+                                                "lat": {
+                                                    "type": "number"
+                                                },
+                                                "lng": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "price": {
+                                    "type": "number"
+                                },
+                                "bedrooms": {
+                                    "type": "integer"
+                                },
+                                "bathrooms": {
+                                    "type": "integer"
+                                },
+                                "sqft": {
+                                    "type": "number"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "apartment",
+                                        "house",
+                                        "condo",
+                                        "studio"
+                                    ]
+                                },
+                                "image": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "amenities": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Property not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "PROPERTY OPERATIONS"
+                ],
+                "summary": "Update property details",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "type": "string",
+                        "description": "Property ID"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "propertyLocation": {
+                                    "type": "object",
+                                    "properties": {
+                                        "place_id": {
+                                            "type": "string"
+                                        },
+                                        "address": {
+                                            "type": "string"
+                                        },
+                                        "coordinates": {
+                                            "type": "object",
+                                            "properties": {
+                                                "lat": {
+                                                    "type": "number"
+                                                },
+                                                "lng": {
+                                                    "type": "number"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "price": {
+                                    "type": "number"
+                                },
+                                "bedrooms": {
+                                    "type": "integer"
+                                },
+                                "bathrooms": {
+                                    "type": "integer"
+                                },
+                                "sqft": {
+                                    "type": "number"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "enum": [
+                                        "apartment",
+                                        "house",
+                                        "condo",
+                                        "studio"
+                                    ]
+                                },
+                                "image": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "amenities": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Property updated successfully"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Property not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/property-requests": {
+            "post": {
+                "tags": [
+                    "PROPERTY REQUEST OPERATIONS"
+                ],
+                "summary": "Create a property request",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "propertyId": {
+                                    "type": "string"
+                                },
+                                "roommate": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Property request created successfully"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/property-requests/{requestId}/approve": {
+            "put": {
+                "tags": [
+                    "PROPERTY REQUEST OPERATIONS"
+                ],
+                "summary": "Approve a property request",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "requestId",
+                        "required": true,
+                        "type": "string",
+                        "description": "Property request ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Property request approved"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Request not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/property-requests/{requestId}/reject": {
+            "delete": {
+                "tags": [
+                    "PROPERTY REQUEST OPERATIONS"
+                ],
+                "summary": "Reject a property request",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "requestId",
+                        "required": true,
+                        "type": "string",
+                        "description": "Property request ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Property request rejected"
+                    },
+                    "400": {
+                        "description": "Invalid request"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Request not found"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}

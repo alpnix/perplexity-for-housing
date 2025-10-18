@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --color-primary: #9b775c;
+  --color-secondary: #7b5e49;
+  --color-tertiaty: #4b392d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a { 
+  @apply text-black;
+}
+
+a:hover {
+  @apply border-b-2 border-black;
+}
+
+
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
+
+a { 
+  transition: transform 1.3s ease; /* Smooth animation for hover */
+}
+
+a:hover {
+  text-decoration: none;
+  border: none !important;
+  cursor: pointer;
+}

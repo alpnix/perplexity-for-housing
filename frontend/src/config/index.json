@@ -1,0 +1,212 @@
+{
+  "company": {
+    "name": "GrotN",
+    "logo": "/assets/images/logo.png"
+  },
+  "navigation": [
+    {
+      "name": "About",
+      "href": "product"
+    },
+    {
+      "name": "Features",
+      "href": "features"
+    }
+  ],
+  "callToAction": {
+    "text": "Try for Free!",
+    "href": "waitinglist"
+  },
+  "mainHero": {
+    "title": "Dream Mate,",
+    "subtitle": "Dream Rental.",
+    "description": "Find your perfect living space hassle-free with GrotN! Enjoy secure housing wherever you desire, without the stress of overbidding or uncertainty. 🏡",
+    "img": "/assets/images/happyTeam.jpeg",
+    "primaryAction": {
+      "text": "Try Beta!",
+      "href": "waitinglist"
+    },
+    "secondaryAction": {
+      "text": "Join Us!", 
+      "href": "https://chat.whatsapp.com/J0VvPqx9p9yA0nDW24eh0B"
+    }
+  },
+  "product": {
+    "title": "About Us",
+    "items": [
+      {
+        "title": "Our Goals",
+        "description": "We are college students who are impacted by the difficulty of finding a house in major cities. With our all-in-one platform, we want to help many others just like us by assisting them with suggesting fitting roommates, finding a comfortable house and making sure the payments are made conveniently. We want to start from the 400,000 missing houses in the Netherlands and, in the future, expand to helping out with the housing crisis globally!",
+        "old_description": "We're a software startup dedicated to tackling housing shortages in crisis cities, starting with the Netherlands. Through our AI roommate & rental-matching system, we aim to streamline the searching process, saving you money and ensuring a stress-free housing experience anywhere you choose to live. Our circular economic model optimizes existing rentals, aiming to cut the government's anticipated 100,000 annual new construction target in half. This facilitates more efficient budget allocation and provides landlords with a secure rent payment method. Plus, who knows? Like Brian Chesky and Joe Gebbia, who met as roommates and founded Airbnb, you might just find your perfect partner(s) too!",
+        "img": "/assets/images/undraw_goals_0pov.svg"
+      },
+      {
+        "title": "Our Team",
+        "description": "The content of this part is directly entered through HTML",
+        "people": [
+          {
+            "name": "Alp Niksarli",
+            "img": "/assets/images/mert.jpg",
+            "university": "CS @ Davidson & Bonner Scholar",
+            "highschool": "Robert College'23", 
+            "role": "CTO @ GrotN",
+            "github": "https://github.com/alpnix", 
+            "linkedin": "https://www.linkedin.com/in/alpniksarli/", 
+            "email": "mailto:alp.niksarli@gmail.com"
+          },
+          {
+            "name": "Cagan Oflazoglu",
+            "img": "/assets/images/mert.jpg",
+            "university": "University of Amsterdam E&BE - Honours Student",
+            "highschool": "Robert College'23", 
+            "role": "CEO @ GrotN",
+            "github": "https://github.com/Coflaz", 
+            "linkedin": "https://www.linkedin.com/in/cagan-oflazoglu-30aa04215/", 
+            "email": "mailto:cagan04oflazoglu@gmail.com"
+          }, 
+          {
+            "name": "Pacis Nkubito",
+            "img": "/assets/images/mert.jpg",
+            "university": "CS & Math @ Davidson College",
+            "highschool": "Robert College'23", 
+            "role": "Lead Developer @ GrotN",
+            "github": "https://github.com/n-pacis", 
+            "linkedin": "https://www.linkedin.com/in/pacisnkubito/", 
+            "email": "mailto:nkpacis@davidson.edu"
+          },
+          {
+            "name": "Murtaza Nikzad",
+            "img": "/assets/images/mert.jpg",
+            "university": "CS @ Davidson College",
+            "highschool": "ARS High School", 
+            "role": "Lead Developer @ GrotN",
+            "github": "https://github.com/MurtazaKafka", 
+            "linkedin": "https://www.linkedin.com/in/murtaza-nikzad-877722158/", 
+            "email": "mailto:munikzad@davidson.edu"
+          }
+        ],
+        "img": "/assets/images/undraw_team_spirit_re_yl1v.svg"
+      }, 
+      {
+        "title": "Our Achievements",
+        "description": "As an idea stage startup, we got accepted into some top incubator programs like Founder's Institute and LaunchCLT's Co.starters program. \n After proceeding without an incubator, we won Nisbet Venture's Audience Choice Award and later won 1st place in Avinger Impact Fund!",
+        "investors": [
+          {
+            "name": "Founder's Institute",
+            "img": "/assets/images/foundersinstitute.png",
+            "href": "https://fi.co/"
+          },
+          {
+            "name": "Hurt Hub",
+            "img": "/assets/images/hurthub.svg",
+            "href": "https://hurthub.davidson.edu/"
+          },
+          {
+            "name": "LaunchCLT",
+            "img": "/assets/images/launchclt.jpeg",
+            "href": "https://launchclt.org/"
+          }
+        ], 
+        "img": "assets/images/undraw_coding_re_iv62.svg"
+      }
+    ]
+  },
+  "features": {
+    "title": "Latest & greatest ",
+    "subtitle": "Features",
+    "description": "Create your profile. Set your preferences. Get matched with ideal roommates with the help of AI. Find houses with full guarantee.",
+    "items": [
+      {
+        "name": "AI-powered roommate matching",
+        "description": "Decide which profiles you like or not and let our AI match you with the best possible roommates.",
+        "icon": "fa fa-bolt"
+      },
+      {
+        "name": "Quick Messaging",
+        "description": "Chat with your potential roommates and landlords in-app to better decide who will be a better fit for you.",
+        "icon": "fa fa-comments"
+      },
+      {
+        "name": "Seamless and Comission-free Payment",
+        "description": "Pay your rent with a single click. No more worries about bank transfers, cash payments, or high commissions.",
+        "icon": "fa fa-solid fa-credit-card"
+      },
+      {
+        "name": "Interactive Dashboard",
+        "description": "Keep track of your payments, messages, and matches in one, ultimate housing platform.",
+        "icon": "fa fa-info"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Pricing",
+    "items": [
+      {
+        "name": "Free",
+        "price": "$0",
+        "priceDetails": "for one user",
+        "features": [
+          "1 user",
+          "Basic Support",
+          "1 GB of storage",
+          "Email support"
+        ]
+      },
+      {
+        "name": "Pro",
+        "price": "$15",
+        "priceDetails": "per user",
+
+        "features": [
+          "5 users",
+          "Priority Support",
+          "10 GB of storage",
+          "Phone and Email support"
+        ]
+      },
+      {
+        "name": "Enterprise",
+        "price": "$29",
+        "priceDetails": "per user",
+        "features": [
+          "50 users",
+          "24/7 Support",
+          "100 GB of storage",
+          "Phone and Email support"
+        ]
+      }
+    ]
+  },
+  "waitinglist": {
+    "title": "Join our Waiting List", 
+    "subtitle": "Become one of the first people to try our product for free!"
+  }, 
+  "about": {
+    "sections": [
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      },
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      },
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      },
+      {
+        "name": "Something",
+        "href": "#",
+        "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
+      }
+    ],
+    "socialMedia": {
+      "github": "https://github.com/Project-Grot",
+      "linkedin": "https://www.linkedin.com/company/grotn/"
+    }
+  }
+}
