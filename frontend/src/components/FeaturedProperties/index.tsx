@@ -73,7 +73,7 @@ const FeaturedProperties = () => {
           <div className="container flex flex-col md:flex-row items-center md:items-start mt-4 md:mt-0 space-x-4">
             <div className="text-5xl">🏡</div>
             <p className="text-lg text-secondary text-center md:text-left">
-              Browse our featured properties to find your next home! From solo spaces to roommate-ready rentals, GrotN brings you a curated selection of top listings. Dive in and see what’s waiting for you!
+              Browse our featured properties to find your next home! From solo spaces to roommate-ready rentals, Owl brings you a curated selection of top listings. Dive in and see what's waiting for you!
             </p>
           </div>
         </div>

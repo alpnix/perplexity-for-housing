@@ -14,35 +14,27 @@ const Navbar = () => {
     const router = useRouter();
 
     const tenantRoutes = [
-        { name: 'GrotBot', href: '/' },
+        { name: 'OwlBot', href: '/' },
         { name: 'Properties', href: '/properties' },
         { name: 'Roommates', href: '/roommates' },
+        { name: 'Agents', href: '/agents' },
     ];
 
     const routes = tenantRoutes;
 
     const handleLogout = () => {
         logout();
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // Clear cookie properly
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax";
+        // Also clear localStorage
+        try { localStorage.removeItem('token'); } catch {}
         router.push('/');
         setIsUserMenuOpen(false);
     };
 
     const handleNavigation = (href: string) => {
-        // Allow navigation to home page regardless of authentication
-        if (href === '/') {
-            router.push(href);
-            return;
-        }
-
-        // Check if user is authenticated for protected routes
-        if (!user) {
-            // Redirect to sign-in page if not authenticated
-            router.push('/sign-in');
-            return;
-        }
-
-        // Navigate to the requested page if authenticated
+        // Simply navigate to the requested page
+        // Authentication is handled by middleware
         router.push(href);
     };
 
@@ -78,7 +70,7 @@ const Navbar = () => {
                     <div className="flex items-center">
                         <img src="/assets/images/logo.png" alt="Logo" className="h-8 w-8" />
                         <Link href="/" className="ml-2 flex items-center">
-                            <span className="text-xl font-bold text-primary">GrotN</span>
+                            <span className="text-xl font-bold text-primary">Owl</span>
                         </Link>
                     </div>
 

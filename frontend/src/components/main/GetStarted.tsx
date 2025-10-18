@@ -17,7 +17,7 @@ const GetStarted: React.FC = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center">
-        <h1 className="text-4xl font-bold mb-6">Get Started With GrotN!</h1>
+        <h1 className="text-4xl font-bold mb-6">Get Started With Owl!</h1>
         <div className="flex justify-center items-center gap-8 flex-wrap">
         <Link
         className="bg-primary px-5 py-2 text-white rounded-lg hover:bg-secondary"

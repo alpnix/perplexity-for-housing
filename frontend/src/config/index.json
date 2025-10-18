@@ -1,6 +1,6 @@
 {
   "company": {
-    "name": "GrotN",
+    "name": "Owl",
     "logo": "/assets/images/logo.png"
   },
   "navigation": [
@@ -20,7 +20,7 @@
   "mainHero": {
     "title": "Dream Mate,",
     "subtitle": "Dream Rental.",
-    "description": "Find your perfect living space hassle-free with GrotN! Enjoy secure housing wherever you desire, without the stress of overbidding or uncertainty. 🏡",
+    "description": "Find your perfect living space hassle-free with Owl! Enjoy secure housing wherever you desire, without the stress of overbidding or uncertainty. 🏡",
     "img": "/assets/images/happyTeam.jpeg",
     "primaryAction": {
       "text": "Try Beta!",
@@ -49,7 +49,7 @@
             "img": "/assets/images/mert.jpg",
             "university": "CS @ Davidson & Bonner Scholar",
             "highschool": "Robert College'23", 
-            "role": "CTO @ GrotN",
+            "role": "CTO @ Owl",
             "github": "https://github.com/alpnix", 
             "linkedin": "https://www.linkedin.com/in/alpniksarli/", 
             "email": "mailto:alp.niksarli@gmail.com"
@@ -59,7 +59,7 @@
             "img": "/assets/images/mert.jpg",
             "university": "University of Amsterdam E&BE - Honours Student",
             "highschool": "Robert College'23", 
-            "role": "CEO @ GrotN",
+            "role": "CEO @ Owl",
             "github": "https://github.com/Coflaz", 
             "linkedin": "https://www.linkedin.com/in/cagan-oflazoglu-30aa04215/", 
             "email": "mailto:cagan04oflazoglu@gmail.com"
@@ -69,7 +69,7 @@
             "img": "/assets/images/mert.jpg",
             "university": "CS & Math @ Davidson College",
             "highschool": "Robert College'23", 
-            "role": "Lead Developer @ GrotN",
+            "role": "Lead Developer @ Owl",
             "github": "https://github.com/n-pacis", 
             "linkedin": "https://www.linkedin.com/in/pacisnkubito/", 
             "email": "mailto:nkpacis@davidson.edu"
@@ -79,7 +79,7 @@
             "img": "/assets/images/mert.jpg",
             "university": "CS @ Davidson College",
             "highschool": "ARS High School", 
-            "role": "Lead Developer @ GrotN",
+            "role": "Lead Developer @ Owl",
             "github": "https://github.com/MurtazaKafka", 
             "linkedin": "https://www.linkedin.com/in/murtaza-nikzad-877722158/", 
             "email": "mailto:munikzad@davidson.edu"

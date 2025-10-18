@@ -31,7 +31,7 @@ const Landing = () => {
                 </span>
               </h1>
               <p className="text-lg sm:text-xl lg:text-2xl text-white mt-4">
-              Find your perfect living space hassle-free with GrotN! Enjoy secure housing wherever you desire, without the stress of overbidding or uncertainty. 🏡
+              Find your perfect living space hassle-free with Owl! Enjoy secure housing wherever you desire, without the stress of overbidding or uncertainty. 🏡
               </p>    
           </div>
           <div className="relative z-20">

@@ -110,7 +110,7 @@ const OnboardingPage = () => {
       {step === 1 && (
         <div className="text-center space-y-6">
           <h2 className="text-4xl font-bold text-gray-800">Continue Onboarding</h2>
-          <p className="text-gray-600">GrotN is tenant-only for now.</p>
+          <p className="text-gray-600">Owl is tenant-only for now.</p>
           <div className="flex flex-wrap justify-center space-x-4 md:space-x-8">
             <OnboardingCard
               title="Tenant"

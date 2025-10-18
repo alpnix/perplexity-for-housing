@@ -9,10 +9,10 @@ import Navbar from '@/components/Navbar.tsx';
 
 export const metadata = {
   description:
-    'Grotn Client Application',
+    'Owl Client Application',
   keywords:
     'next, typescript, tailwind css, prettier, eslint, husky, seo',
-  title: 'GrotN',
+  title: 'Owl',
 };
 
 const poppins = Poppins({

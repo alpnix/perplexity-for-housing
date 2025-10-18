@@ -10,7 +10,7 @@ const Loading: React.FC = () => {
           aria-label="Loading spinner"
         ></div>
 
-        {/* GrotN Text */}
+        {/* Owl Text */}
         <div className="mt-4 text-center">
           <h1 className="text-[#9b775c] text-lg font-semibold">Loading...</h1>
           <p className="text-gray-600 text-sm">Please wait while we search for the perfect rental for you..</p>

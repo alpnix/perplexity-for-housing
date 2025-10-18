@@ -47,6 +47,10 @@ export const useFetch = async (
     console.warn("Unauthorized request. Logging out user...");
     clearUser();
     removeCookie("token");
+    // Redirect to sign-in page
+    if (typeof window !== 'undefined') {
+      window.location.href = '/sign-in';
+    }
   }
 
   return response;

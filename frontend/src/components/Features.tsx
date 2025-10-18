@@ -10,12 +10,12 @@ const Features = () => {
         },
         {
             heading: 'Secure Payments',
-            description: 'Integrated with Stripe API, GrotN provides a seamless and secure payment platform. Tenants and landlords can easily handle rent payments, deposits, and other transactions without worrying about fraud or delays. Transparency and security are at the core of every transaction.', 
+            description: 'Integrated with Stripe API, Owl provides a seamless and secure payment platform. Tenants and landlords can easily handle rent payments, deposits, and other transactions without worrying about fraud or delays. Transparency and security are at the core of every transaction.', 
             image: 'assets/features/secure-payments.jpg'
         },
         {
             heading: 'House Pool',
-            description: 'GrotN offers a comprehensive pool of rental properties, making it easy for users to explore listings with detailed profiles, availability, and amenities. Landlords can showcase their properties to the right audience, and tenants can find their ideal living space with ease.', 
+            description: 'Owl offers a comprehensive pool of rental properties, making it easy for users to explore listings with detailed profiles, availability, and amenities. Landlords can showcase their properties to the right audience, and tenants can find their ideal living space with ease.', 
             image: 'assets/features/house-pool.jpg'
         }
     ];

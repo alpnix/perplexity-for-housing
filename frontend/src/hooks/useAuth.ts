@@ -73,7 +73,8 @@ export const useAuth = () => {
     {
       onSuccess: async ({ token }) => {
         token = token.replace(/^"(.*)"$/, "$1");
-        document.cookie = `token=${token}; path=/;`;
+        // Set cookie with proper attributes
+        document.cookie = `token=${token}; path=/; max-age=86400; SameSite=Lax`;
         try { localStorage.setItem('token', token); } catch {}
         await handleAuthSuccess();
       },
@@ -96,7 +97,8 @@ export const useAuth = () => {
     },
     {
       onSuccess: async ({ token }) => {
-        document.cookie = `token=${token}; path=/;`;
+        // Set cookie with proper attributes
+        document.cookie = `token=${token}; path=/; max-age=86400; SameSite=Lax`;
         try { localStorage.setItem('token', token); } catch {}
         await handleAuthSuccess();
       },

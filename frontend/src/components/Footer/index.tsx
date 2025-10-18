@@ -10,13 +10,13 @@ const Footer: FC = () => {
             <div className="relative flex items-center mb-[1.5rem]">
             <Image
               src="/assets/footer/logo.png"
-              alt="Grotn Logo"
+              alt="Owl Logo"
               className="mr-2"
               width={26}
               height={26}
               style={{ width: "auto", height: "auto" }}
             />
-            <p className="m-0">GrotN</p>
+            <p className="m-0">Owl</p>
             </div>
           <div className="relative flex space-x-4 items-center mt-4">
             <div className="w-4">
@@ -82,7 +82,7 @@ const Footer: FC = () => {
               rel="noopener noreferrer"
               className="text-sm text-gray-400"
             >
-              {new Date().getFullYear()} developed by{' '} Team GrotN
+              {new Date().getFullYear()} developed by{' '} Team Owl
             </Link>
           </div>
         </div>

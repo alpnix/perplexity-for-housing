@@ -5,13 +5,13 @@ import Founder from "./Founder";
 const teamMembers = [
   {
       name: "Cagan",
-      description: "CEO @ GrotN",
+      description: "CEO @ Owl",
       email: "cagan04oflazoglu@gmail.com",
       image: "assets/team/Cagan-Oflazoglu.jpg",
   },  
   {
     name: "Alp",
-    description: "CTO @ GrotN",
+    description: "CTO @ Owl",
     email: "alniksarli@davidson.edu",
     image: "assets/team/Alp-Niksarli.jpg",
   },
@@ -27,7 +27,7 @@ const AboutUs: React.FC = () => {
             Who are we? 
             </h2>
             <p className="text-md md:text-right md:w-3/6 text-center w-full">
-            🏡 GrotN is an all-in-one housing platform aimed at solving challenges in finding secure, affordable, and convenient housing.
+            🏡 Owl is an all-in-one housing platform aimed at solving challenges in finding secure, affordable, and convenient housing.
             </p>
         </div>
         <div className="founders flex justify-evenly flex-wrap">

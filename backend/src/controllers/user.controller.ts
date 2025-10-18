@@ -26,6 +26,12 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 export const makePayment = async (req: Request, res: Response): Promise<void> => {
   try {
     console.log(req.body); 
+
+    if (!process.env.STRIPE_SECRET_KEY) {
+      errorResponse("Stripe secret key is not set", res);
+      return;
+    }
+
     const { amount } = await req.body;
     const paymentIntent = await stripe.paymentIntents.create({
       amount,

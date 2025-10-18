@@ -57,7 +57,7 @@ const Menu = () => {
         >
         <div className="flex items-center flex-shrink-0">
             <Link href="/">
-                <span className="sr-only">GrotN</span>
+                <span className="sr-only">Owl</span>
                 <img 
                   alt="logo" 
                   className="h-12 w-auto sm:h-14 object-contain" 
